@@ -1,104 +1,44 @@
-# Quang Van Tran — Academic Research Website
+# Quang Van Tran · Academic Website
 
-A complete, responsive static website for GitHub Pages, focused on **urban climate, environmental equity, remote sensing and computational modeling**.
+A minimalist academic site inspired by the layout in your screenshot (profile sidebar + clean biography content). All **five HTML pages have their CSS and avatar placeholder embedded** to eliminate the broken CSS / image paths you encountered earlier. No NPM, Jekyll, packages, or external assets required.
 
-## Files
+## Pages
+- `index.html` - homepage with biography, education, research interests and contact
+- `publications.html` - journal publications, submitted manuscripts and conferences
+- `projects.html` - research projects
+- `talks.html` - conferences and academic activities
+- `cv.html` - public-facing CV page
+- `Quang_Van_Tran_Public_CV.pdf` - public academic CV, omitting street address and personal phone
 
-```text
-quang-van-tran-academic-site/
-├── index.html                  Homepage, featured research, about, contact
-├── research.html               Detailed research projects
-├── publications.html           Verified journal publications
-├── .nojekyll                   Tells GitHub Pages to serve files directly
-├── assets/
-│   ├── css/styles.css          Full mobile-responsive design
-│   ├── js/site-config.js       YOUR email, CV and scholarly profile URLs
-│   ├── js/main.js              Mobile menu, contact links, interactions
-│   └── img/
-│       ├── hero-urban.svg
-│       ├── research-redlining.svg
-│       ├── research-heat.svg
-│       ├── research-cfd.svg
-│       ├── social-preview.svg
-│       └── favicon.svg
-└── docs/
-    └── CUSTOMIZE.md            Where and how to edit each section
-```
+## Deploy to GitHub Pages
 
-All illustrations are **conceptual artwork, not study figures, measurements or simulation results**. Swap them with permission-cleared research imagery if appropriate.
+1. Open your repository: https://github.com/qvtrtran/qvtrtran.github.io (if you renamed it). 
+2. Remove older unused `research.html` and `assets/` only **if** you want to clean up the repo (they are not needed by the new pages). The safest approach is to overwrite `index.html` and `publications.html` and add the others.
+3. Use **Add file > Upload files** to upload ALL files from this extracted folder to the **repository root**. Do not upload the ZIP or a parent folder.
+4. Click **Commit changes**.
+5. Under **Settings > Pages**, choose **Deploy from a branch** > `main` > `/ (root)` and save. Wait a few minutes.
+6. Open https://qvtrtran.github.io and hard-refresh with Ctrl+Shift+R.
 
-## 1. Preview the website on your computer
+## Replace the circular monogram with a real photo
 
-- **Quick**: extract the ZIP and double-click `index.html`. Navigate to the other pages. All graphics are local.
-- **Recommended**: in the extracted website folder run `python -m http.server 8000` (on some systems use `py -m http.server 8000`), then open `http://localhost:8000` in your browser.
+The initials `QV` are a deliberate temporary substitute. To use a photo:
 
-## 2. Check your GitHub username
+- Save your headshot as `profile.jpg` in the repository root.
+- For each HTML page, find the block `<div class="avatar" ...> ... </div>` and add this immediately before its closing `</div>`:
+  `<img src="profile.jpg" alt="Portrait of Quang Van Tran">`
+- Keep the old SVG inside the div so the monogram remains as a fallback if no photo is available.
 
-**Important**: `quangv.tran.github.io` is *not a valid GitHub username*. GitHub usernames permit letters, numbers and single hyphens, not periods. `quangv.tran.github.io` cannot be assigned as your standard GitHub Pages subdomain, either: GitHub controls `github.io` subdomains. If you want a custom address, use a separate domain that you own, such as `quangvtran.com`.
+The avatar and all styling are currently inline, so the pages render without external CSS even before a photo is uploaded.
 
-Open https://github.com and look at your profile URL, for example `https://github.com/quangv-tran`. In this example:
+## Social links and factual review
 
-- GitHub **username**: `quangv-tran` (example only; availability unknown)
-- New **repository**: `quangv-tran.github.io`
-- Published **website**: `https://quangv-tran.github.io`
+- UTSA email, LinkedIn, ORCID, and Google Scholar links came from the uploaded CV.
+- Verify that your education dates, publications, affiliations, and manuscript statuses are still current before you publish.
+- In your uploaded CV, several article years differ from the years embedded in their DOI identifiers (such as 2024 vs 2025). The website preserves the CV's year labels rather than independently changing them. Please verify final publisher publication dates before relying on the list.
+- The uploaded CV contains a ResearchGate URL that appears to point to another researcher; it is **not** included.
+- The source CV included a residential address and personal telephone number; **neither is published here**, including in the PDF.
+- `research.html` was an old-page filename. This replacement uses `projects.html`, matching the navigation in your reference.
 
-Replace the example everywhere with your actual GitHub username.
+## Maintainability
 
-## 3. Publish your site (no coding required)
-
-1. Sign in to GitHub and click **New repository**.
-2. For a main personal site, name the repository **`YOUR-REAL-USERNAME.github.io`** (exact spelling, all lowercase recommended).
-3. Set repository visibility to **Public**, then create the repository.
-4. From inside your extracted website folder, upload **the files and folders inside** it to the *root of the repository* (not the enclosing folder). You can drag and drop the entire `assets/` folder and HTML files with **Add file → Upload files**; GitHub preserves folder structure.
-5. Commit the uploaded files to `main`.
-6. Go to **Settings → Pages**, under **Build and deployment**, select **Deploy from a branch**, `main`, `/ (root)`, and save.
-7. Visit `https://YOUR-REAL-USERNAME.github.io` after GitHub publishes the site.
-
-Official instructions: https://docs.github.com/en/pages/quickstart
-
-**Alternative:** If your repository has any other name (e.g., `academic-website`), its URL will generally be `https://YOUR-REAL-USERNAME.github.io/academic-website/`. The site uses relative paths and works there too.
-
-### Git command-line method (optional)
-
-```bash
-git init
-git add .
-git commit -m "Initial academic portfolio"
-git branch -M main
-git remote add origin https://github.com/YOUR-REAL-USERNAME/YOUR-REAL-USERNAME.github.io.git
-git push -u origin main
-```
-
-Only run the command-line method after creating an empty repository. Otherwise use the upload method above.
-
-## 4. Customize your information
-
-- Open `assets/js/site-config.js` and replace blank values with your *public* institutional email, Google Scholar, ORCID, LinkedIn, GitHub URL and CV path. Blank values remain invisible.
-- For a downloadable CV, place a PDF at `assets/cv.pdf` and set `cv: "assets/cv.pdf"`.
-- Edit the biography in `index.html`.
-- Edit project descriptions in `research.html`. Replace research status labels as projects progress.
-- Add accepted publications to `publications.html` after verifying titles, journal names and links.
-- Replace conceptual SVG graphics with your own research images if desired. Keep clear distinction between illustrations and empirical findings.
-- Read `docs/CUSTOMIZE.md` for specific editing points.
-
-## 5. Accessibility and maintenance
-
-The site has keyboard-accessible navigation, visible focus rings, reduced-motion support, alt text, responsive layouts, no analytics/tracking, no libraries and no build process.
-
-For site changes, edit a file and push or upload it again. GitHub Pages will rebuild from the latest commit.
-
-## Publication citation verification
-
-Tran, Q. V., Najafian, P., Hashemi, F., Morakinyo, T. E., & López Ochoa, E. (2025). *Year-round heat exposure and structural spatial vulnerability: A case study of San Antonio, Texas.* Sustainable Cities and Society, 135, 107021. https://doi.org/10.1016/j.scs.2025.107021
-
-## Before sharing your website publicly
-
-- [ ] Replace the initials illustration with your professional headshot, if desired.
-- [ ] Insert institutional email and professional profile URLs into `site-config.js`.
-- [ ] Add your current CV PDF (optional).
-- [ ] Verify your preferred affiliation and title (PhD student, PhD candidate, or PhD researcher).
-- [ ] Update publication list and project descriptions.
-- [ ] Consider adding true study figures with captions and appropriate attribution.
-- [ ] Verify all external links.
-
-**Copyright:** Website markup and site illustrations were generated for this portfolio. The scientific publication belongs to its respective authors/publisher; no article PDF or third-party journal figure is redistributed here.
+To edit content, open an HTML file with VS Code (or GitHub editor). Page styles are deliberately embedded in each document to protect against the missing-file issue that occurred in the earlier site. This means changing a site-wide style requires editing all HTML pages.
