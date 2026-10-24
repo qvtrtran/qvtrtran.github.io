@@ -1,5 +1,6 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="theme-color" content="#ffffff"><meta name="description" content="Quang Van Tran, PhD researcher at the University of Texas at San Antonio: urban climate, environmental inequality, remote sensing, CFD and machine learning."><title>Talks &amp; conferences | Quang Van Tran</title><style>
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="light" name="color-scheme"/><meta content="#ffffff" name="theme-color"/><meta content="Selected conference contributions and accepted research presentations by Quang Van Tran at UTSA." name="description"/><title>Talks and presentations | Quang Van Tran</title><style>
 :root { --ink:#424752; --muted:#667080; --subtle:#8b91a0; --accent:#536b94; --accent-hover:#304a77; --border:#ececf0; --footer:#f7f6fb; --surface:#f7f8fb; --wrap:928px; }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -102,7 +103,101 @@ a:focus-visible,button:focus-visible{outline:3px solid #9cb6df;outline-offset:3p
  .sidebar{display:none}.main-content{padding:0}
  .project,.publication{break-inside:avoid}
 }
+
+
+/* Picture-first publication cards matching the requested academic reference */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.pub-intro{margin-bottom:30px}
+.pub-intro .section-intro{margin-bottom:16px!important}
+.pub-search{display:block;width:min(100%,335px);border:1px solid #c4c8d1;border-radius:5px;padding:10px 12px;background:#fff;color:var(--ink);font:inherit;font-size:14px;outline-offset:2px}
+.pub-search:focus{border-color:#667fa7;box-shadow:0 0 0 3px #dfe8f5}
+.filter-status{font-size:12px;color:var(--subtle);height:0;margin:0!important;overflow:hidden}
+.publication-section{margin-top:29px}
+.publication-section>h3{font-size:19px;margin:0 0 13px;padding-bottom:12px;border-bottom:1px solid #ececf0}
+.paper-year-group{position:relative;margin:17px 0 26px}
+.paper-year-heading{font-size:22px!important;font-weight:400!important;color:#c1c5cd!important;text-align:right;margin:4px 0 15px!important;line-height:1!important}
+.paper-entry{display:grid;grid-template-columns:136px minmax(0,1fr);gap:22px;align-items:start;padding:10px 0 24px;margin:0 0 18px;border-bottom:1px solid #eff0f2}
+.paper-entry:last-child{border-bottom:0;margin-bottom:4px}
+.paper-visual{width:136px}
+.paper-type{display:block;width:100%;line-height:1.25;text-align:center;padding:4px 6px;border-radius:4px 4px 0 0;background:#f1f3f5;color:#556375;font-size:11px;font-weight:680;margin-bottom:3px}
+.paper-type-conference{background:#dce7f5;color:#3f6085}
+.paper-thumb{width:136px;height:100px;position:relative;border:1px solid #dedfe4;background:#f8fafc;border-radius:4px;box-shadow:0 2px 5px rgba(14,30,55,.09);overflow:hidden}
+.paper-thumb img{width:100%;height:100%;object-fit:contain;position:absolute;inset:0;visibility:hidden;background:#fff}
+.paper-thumb img.loaded{visibility:visible}
+.paper-placeholder{display:grid;place-items:center;align-content:center;gap:5px;width:100%;height:100%;padding:10px;text-align:center;color:#9aa5b4}
+.paper-placeholder svg{width:36px;height:31px}
+.paper-placeholder small{font-size:10.5px;line-height:1.2}
+.paper-title{font-size:15px!important;line-height:1.5!important;color:#313b4e!important;font-weight:720!important;margin:0 0 6px!important}
+.paper-authors{font-size:13.2px;color:#687181;line-height:1.55!important;margin:0 0 3px!important}
+.paper-venue{font-size:13.2px;color:#646e7e;font-style:italic;line-height:1.45!important;margin:0 0 10px!important}
+.paper-actions{display:flex;gap:8px;flex-wrap:wrap}
+.paper-button{display:inline-flex;justify-content:center;align-items:center;min-height:27px;padding:3px 10px;color:#465778;border:1px solid #9ea7b6;border-radius:3px;font-size:11.2px;font-weight:650;text-decoration:none;background:#fff;line-height:1.3}
+.paper-button:hover{text-decoration:none;background:#f0f4fa;border-color:#566c90}
+.nothing-found{color:#687181;font-size:14px;margin-top:24px!important}
+@media(max-width:500px){
+ .paper-entry{grid-template-columns:104px minmax(0,1fr);gap:14px}
+ .paper-visual,.paper-thumb{width:104px}
+ .paper-thumb{height:87px}
+ .paper-type{font-size:10px}
+ .paper-title{font-size:13.7px!important}
+ .paper-authors,.paper-venue{font-size:12.4px}
+ .paper-year-heading{font-size:19px!important}
+}
+@media print{.pub-search,.paper-placeholder{display:none!important}.paper-entry{break-inside:avoid}}
+
+.paper-entry[hidden],.paper-year-group[hidden],.publication-section[hidden],.nothing-found[hidden]{display:none!important}
+
+/* Research-overview images: preserved in full, clickable for a larger view. */
+.paper-image-link{display:block;width:100%;height:100%;outline-offset:3px}
+.paper-image-link img{width:100%;height:100%;object-fit:contain;inset:0;cursor:zoom-in}
+.paper-image-link:focus-visible{outline:3px solid #416bb3}
+.paper-entry:has(.paper-image-link):hover .paper-thumb{box-shadow:0 3px 12px rgba(30,50,80,.18);border-color:#b3c2d9}
+.paper-entry[data-kind="conference"] .paper-visual{padding-top:2px}
+@media(prefers-reduced-motion:no-preference){.paper-thumb{transition:box-shadow .15s ease,border-color .15s ease}}
+
+/* Talks page: understated, linked event titles and comfortably spaced descriptions. */
+.talks-intro .section-intro{margin-bottom:0}
+.talks-section{margin-top:35px}
+.talks-section-title{font-size:14px!important;font-weight:720!important;letter-spacing:.01em;color:#697486;border-bottom:1px solid #ebedf1;padding-bottom:11px;margin:0 0 20px!important}
+.talk-item{padding:1px 0 27px;margin:0 0 27px;border-bottom:1px solid #eef0f3}
+.talk-item:last-child{border-bottom:0;margin-bottom:0}
+.talk-title{font-size:20px!important;font-weight:680!important;line-height:1.45!important;margin:0 0 7px!important}
+.talk-title a{color:#3a93b2;text-decoration:underline;text-decoration-thickness:1.2px;text-underline-offset:3px}
+.talk-title a:hover{color:#246984}
+.talk-link-icon{font-size:15px;margin-left:5px;white-space:nowrap}
+.talk-meta{font-size:12.8px;color:#9298a4;line-height:1.6;margin:0 0 4px!important}
+.talk-separator{padding:0 6px;color:#b5bac4}
+.talk-year{font-weight:650;color:#8292aa}
+.talk-location{font-size:13.2px;color:#646d7c;line-height:1.6;margin:0 0 11px!important}
+.talk-description{font-size:14.5px;color:#4e5767;line-height:1.75;margin:0 0 11px!important}
+.talk-resource{display:inline-block;font-size:13px;border-bottom:1px solid #9dbbd0;color:#4a8da9;line-height:1.5;text-decoration:none}
+.talk-resource:hover{text-decoration:none;border-bottom-color:#327b96}
+.talks-upcoming{margin-top:38px}
+.talks-upcoming .talk-title{font-size:18.5px!important;color:#485365}
+.talks-note{font-size:12.4px!important;color:#7c8593;margin-top:14px!important;border-top:1px solid #eff0f3;padding-top:18px;line-height:1.65}
+@media(max-width:750px){.talk-title{font-size:18px!important}.talk-description{font-size:14px!important}}
 </style></head>
-<body><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html">Quang Van Tran</a><nav class="nav" aria-label="Main navigation"><a href="publications.html">Publications</a><a href="projects.html">Projects</a><a href="talks.html" class="active" aria-current="page">Talks</a><a href="cv.html">CV</a></nav></div></header><div class="page-shell"><aside class="sidebar" aria-label="Researcher profile"><div class="avatar" aria-label="Profile photo placeholder. Replace with your own photograph when available.">
- <svg viewBox="0 0 150 150" role="img" aria-label="QV monogram placeholder"><defs><linearGradient id="avatar-gradient" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#edf1f8"/><stop offset="1" stop-color="#d9e1ee"/></linearGradient></defs><circle cx="75" cy="75" r="75" fill="url(#avatar-gradient)"/><circle cx="75" cy="75" r="59" stroke="#ffffff" fill="none" opacity=".65"/><text x="75" y="88" font-family="Georgia,serif" font-size="48" fill="#607494" text-anchor="middle" letter-spacing="-3">QV</text></svg>
- </div><h1>Quang Van Tran</h1><p class="sidebar-role">PhD Researcher · UTSA</p><ul class="profile-links"><li><span style="display:flex;align-items:center;gap:8px;font-size:12.8px;color:#5d6470"><svg class="glyph" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11Z"/><circle cx="12" cy="10" r="2"/></svg>San Antonio, Texas</span></li><li><a href="mailto:quangvan.tran@utsa.edu" target="_blank" rel="noopener noreferrer"><svg class="glyph" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>UTSA email</a></li><li><a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=TotcmBoAAAAJ" target="_blank" rel="noopener noreferrer"><svg class="glyph" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5C6.7 3.5 9.3 4 12 5.5c2.7-1.5 5.3-2 8-.9V19c-2.8-1.2-5.4-.5-8 1-2.6-1.5-5.2-2.2-8-1V4.5Z"/><path d="M12 5.5V20"/></svg>Google Scholar</a></li><li><a href="https://orcid.org/0000-0003-2471-9784" target="_blank" rel="noopener noreferrer"><svg class="glyph" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M6.5 16c.4-1.5 3.6-1.5 4 0M14 10h4M14 13h4"/></svg>ORCID</a></li><li><a href="https://www.linkedin.com/in/quang-v-tran-248a55183/" target="_blank" rel="noopener noreferrer"><svg class="glyph" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m10 13 4-4"/><path d="M7.5 15.5l-1.3 1.3a4 4 0 0 1-5.7-5.7l4.2-4.2a4 4 0 0 1 5.7 0" transform="translate(3,0)"/><path d="M14.5 8.5l1.3-1.3a4 4 0 0 1 5.7 5.7l-4.2 4.2a4 4 0 0 1-5.7 0" transform="translate(-3,0)"/></svg>LinkedIn</a></li><li><a href="https://github.com/qvtrtran" target="_blank" rel="noopener noreferrer"><svg class="glyph" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.5 1.5-4.5-2-6-2.5M9 21v-3.5c-4 .7-6-1.5-6-5.5 0-1.2.4-2.2 1.3-3.1-.2-.8-.3-2.2.2-3.1 0 0 1.5 0 3.2 1.6 2.6-.8 5.6-.8 8.2 0 1.7-1.6 3.2-1.6 0 0 .4 1.9.2 3.1.9.9 1.3 1.9 1.3 3.1 0 4-2 6.2-6 5.5V21"/></svg>GitHub</a></li></ul></aside><main class="main-content" id="main"><h2>Talks & conferences</h2><p class="section-intro">Selected conference papers and contributions from my CV. A submitted abstract is identified as submitted and should not be mistaken for an accepted presentation.</p><article class="publication"><div class="pub-row"><span class="pub-year">2026</span><div class="pub-body"><p class="pub-title">Surface-Heat Disparities across Historically Redlined U.S. Cities Vary by Climate, Income, and Time of Day<span class="status">Submitted</span></p><p class="pub-authors">Quang Van Tran, Farzad Hashemi, Phuong D. Dao</p><p class="pub-venue">AGU Annual Meeting 2026, San Francisco, CA</p></div></div></article><article class="publication"><div class="pub-row"><span class="pub-year">2026</span><div class="pub-body"><p class="pub-title">Roof Retrofit Scenarios for Thermally Vulnerable Homes: A CFD-Based Evaluation of Indoor Comfort and Air Quality in San Antonio, Texas</p><p class="pub-authors">Quang Van Tran, Farzad Hashemi, Parisa Najafian, Esteban López Ochoa</p><p class="pub-venue">12th International Conference on Indoor Air Quality, Ventilation &amp; Energy Conservation in Buildings (IAQVEC), Los Angeles, CA</p><div class="pub-links"><a href="https://doi.org/10.1051/e3sconf/202671610005" target="_blank" rel="noopener noreferrer">DOI ↗</a></div></div></div></article><article class="publication"><div class="pub-row"><span class="pub-year">2025</span><div class="pub-body"><p class="pub-title">Data-Driven Urban Heat Mitigation: Integrating CFD and Machine Learning for Adaptive Cooling Strategies</p><p class="pub-authors">Farzad Hashemi, Gerald Mills, Quang Van Tran, Parisa Najafian</p><p class="pub-venue">12th International Conference on Urban Climate, Rotterdam, Netherlands</p><div class="pub-links"><a href="https://doi.org/10.5194/icuc12-985" target="_blank" rel="noopener noreferrer">DOI ↗</a></div></div></div></article><article class="publication"><div class="pub-row"><span class="pub-year">2023</span><div class="pub-body"><p class="pub-title">Efficient Prediction of Indoor Airflow in Naturally Ventilated Residential Buildings Using a CFD-DNN Model Approach</p><p class="pub-authors">Tran Van Quang, Nguyen Lu Phuong, Dat Tien Doan</p><p class="pub-venue">2nd International Conference on Green Building, Civil Engineering and Smart City, China</p><div class="pub-links"><a href="https://doi.org/10.1007/978-981-99-9947-7_76" target="_blank" rel="noopener noreferrer">DOI ↗</a></div></div></div></article><h3>Academic activities</h3><p>Program coordinator and session moderator for the UTSA School of Architecture and Planning research colloquium series (Fall 2026).</p><p class="note">Presentation slides and talk recordings can be added when available.</p></main></div><footer class="site-footer"><div class="footer-inner"><div>© 2026 Quang Van Tran. Built for GitHub Pages.</div><div>Urban climate research · The University of Texas at San Antonio</div></div></footer></body></html>
+<body><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html">Quang Van Tran</a><nav aria-label="Main navigation" class="nav"><a href="publications.html">Publications</a><a aria-current="page" class="active" href="talks.html">Talks</a><a href="cv.html">CV</a></nav></div></header><div class="page-shell"><aside aria-label="Researcher profile" class="sidebar"><div aria-label="Academic profile photo" class="avatar">
+<svg aria-label="QV monogram placeholder" role="img" viewbox="0 0 150 150"><defs><lineargradient id="avatar-gradient" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#edf1f8"></stop><stop offset="1" stop-color="#d9e1ee"></stop></lineargradient></defs><circle cx="75" cy="75" fill="url(#avatar-gradient)" r="75"></circle><circle cx="75" cy="75" fill="none" opacity=".65" r="59" stroke="#ffffff"></circle><text fill="#607494" font-family="Georgia,serif" font-size="48" letter-spacing="-3" text-anchor="middle" x="75" y="88">QV</text></svg>
+<img alt="Portrait of Quang Van Tran" loading="eager" onerror="this.remove()" src="profile.jpg"/></div><h1>Quang Van Tran</h1><p class="sidebar-role">PhD Researcher · UTSA</p><ul class="profile-links"><li><span style="display:flex;align-items:center;gap:8px;font-size:12.8px;color:#5d6470"><svg aria-hidden="true" class="glyph" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11Z"></path><circle cx="12" cy="10" r="2"></circle></svg>San Antonio, Texas</span></li><li><a href="mailto:quangvan.tran@utsa.edu" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="glyph" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg>UTSA email</a></li><li><a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=TotcmBoAAAAJ" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="glyph" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M4 4.5C6.7 3.5 9.3 4 12 5.5c2.7-1.5 5.3-2 8-.9V19c-2.8-1.2-5.4-.5-8 1-2.6-1.5-5.2-2.2-8-1V4.5Z"></path><path d="M12 5.5V20"></path></svg>Google Scholar</a></li><li><a href="https://orcid.org/0000-0003-2471-9784" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="glyph" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><circle cx="8.5" cy="11" r="2"></circle><path d="M6.5 16c.4-1.5 3.6-1.5 4 0M14 10h4M14 13h4"></path></svg>ORCID</a></li><li><a href="https://www.linkedin.com/in/quang-v-tran-248a55183/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="glyph" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="m10 13 4-4"></path><path d="M7.5 15.5l-1.3 1.3a4 4 0 0 1-5.7-5.7l4.2-4.2a4 4 0 0 1 5.7 0" transform="translate(3,0)"></path><path d="M14.5 8.5l1.3-1.3a4 4 0 0 1 5.7 5.7l-4.2 4.2a4 4 0 0 1-5.7 0" transform="translate(-3,0)"></path></svg>LinkedIn</a></li><li><a href="https://github.com/qvtrtran" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="glyph" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M9 19c-4.5 1.5-4.5-2-6-2.5M9 21v-3.5c-4 .7-6-1.5-6-5.5 0-1.2.4-2.2 1.3-3.1-.2-.8-.3-2.2.2-3.1 0 0 1.5 0 3.2 1.6 2.6-.8 5.6-.8 8.2 0 1.7-1.6 3.2-1.6 0 0 .4 1.9.2 3.1.9.9 1.3 1.9 1.3 3.1 0 4-2 6.2-6 5.5V21"></path></svg>GitHub</a></li></ul></aside><main class="main-content" id="main"><div class="talks-intro"><h2>Talks and presentations</h2><p class="section-intro">Selected conference contributions and research presentations in urban climate, building environmental performance, and computational modeling.</p></div><section aria-labelledby="talks-selected" class="talks-section"><h3 class="talks-section-title" id="talks-selected">Selected conference contributions</h3><article class="talk-item"><h3 class="talk-title"><a href="https://doi.org/10.1051/e3sconf/202671610005" rel="noopener noreferrer" target="_blank">Roof Retrofit Scenarios for Thermally Vulnerable Homes: A CFD-Based Evaluation of Indoor Comfort and Air Quality in San Antonio, Texas<span aria-hidden="true" class="talk-link-icon">↗</span></a></h3><p class="talk-meta"><span class="talk-year">2026</span><span class="talk-separator">·</span><span>Conference contribution · Presenter</span></p><p class="talk-location">12th International Conference on Indoor Air Quality, Ventilation &amp; Energy Conservation in Buildings (IAQVEC 2026)<span class="talk-separator"> · </span>Los Angeles, California, USA</p><p class="talk-description">This conference contribution examines roof retrofit scenarios for thermally vulnerable homes and evaluates their implications for indoor comfort and air quality using computational fluid dynamics.</p><div class="talk-resources"><a class="talk-resource" href="https://doi.org/10.1051/e3sconf/202671610005" rel="noopener noreferrer" target="_blank">Conference paper ↗</a></div></article><article class="talk-item"><h3 class="talk-title"><a href="https://doi.org/10.5194/icuc12-985" rel="noopener noreferrer" target="_blank">Data-Driven Urban Heat Mitigation: Integrating CFD and Machine Learning for Adaptive Cooling Strategies<span aria-hidden="true" class="talk-link-icon">↗</span></a></h3><p class="talk-meta"><span class="talk-year">2025</span><span class="talk-separator">·</span><span>Conference paper</span></p><p class="talk-location">12th International Conference on Urban Climate (ICUC12)<span class="talk-separator"> · </span>Rotterdam, Netherlands</p><p class="talk-description">This contribution concerns the integration of computational fluid dynamics and machine learning to investigate data-driven strategies for urban heat mitigation.</p><div class="talk-resources"><a class="talk-resource" href="https://doi.org/10.5194/icuc12-985" rel="noopener noreferrer" target="_blank">Conference abstract ↗</a></div></article></section><section aria-labelledby="talks-upcoming" class="talks-section talks-upcoming"><h3 class="talks-section-title" id="talks-upcoming">Accepted / upcoming</h3><article class="talk-item"><h3 class="talk-title">Surface-Heat Disparities across Historically Redlined U.S. Cities Vary by Climate, Income, and Time of Day</h3><p class="talk-meta"><span class="talk-year">2026</span><span class="talk-separator">·</span><span>Accepted conference abstract · Presentation details not confirmed</span></p><p class="talk-location">AGU Annual Meeting 2026<span class="talk-separator"> · </span>San Francisco, California, USA</p><p class="talk-description">The accepted abstract addresses how surface heat disparities across historically redlined cities vary with climate, income, and time of day.</p><div class="talk-resources"></div></article></section><p class="talks-note">Presentation format and exact dates are included only when confirmed by the available records.</p></main></div><footer class="site-footer"><div class="footer-inner"><div>© 2026 Quang Van Tran. Built for GitHub Pages.</div><div>Urban climate research · The University of Texas at San Antonio</div></div></footer><script>
+(function(){
+ const search = document.getElementById('pub-search');
+ const groups = [...document.querySelectorAll('.paper-year-group')];
+ const sections = [...document.querySelectorAll('.publication-section')];
+ const empty = document.querySelector('.nothing-found');
+ const status = document.getElementById('result-count');
+ if (!search) return;
+ search.addEventListener('input', function(){
+    const query=this.value.trim().toLowerCase(); let shown=0;
+    document.querySelectorAll('.paper-entry').forEach(card=>{
+       const isMatch=card.textContent.toLowerCase().includes(query);
+       card.hidden=!isMatch;
+       if (isMatch) shown++;
+    });
+    groups.forEach(group=>group.hidden=![...group.querySelectorAll('.paper-entry')].some(card=>!card.hidden));
+    sections.forEach(section=>section.hidden=![...section.querySelectorAll('.paper-entry')].some(card=>!card.hidden));
+    empty.hidden=shown!==0;
+    status.textContent=shown+' publication'+(shown===1?'':'s')+' displayed';
+ });
+})();
+</script></body></html>
